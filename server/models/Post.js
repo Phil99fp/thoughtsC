@@ -1,4 +1,4 @@
-const init = require("../dbConfig");
+const { init } = require("../dbConfig");
 const { ObjectId } = require("mongodb");
 
 class Post {
