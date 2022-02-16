@@ -1,0 +1,35 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  font-family: "stickman", sans-serif;
+}
+
+form {
+  display: grid;
+}
+
+.name {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.titleWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.titleDiv {
+  max-width: fit-content;
+  font-size: clamp(1.5rem, 5vw, 2.75rem);
+  text-align: center;
+  font-family: "stickman", sans-serif;
+  font-weight: bold;
+  color: black;
+  line-height: 2.5em;
+  margin-bottom: 0.25em;
+}
