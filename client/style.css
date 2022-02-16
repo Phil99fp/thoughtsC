@@ -12,15 +12,26 @@ section {
   display: flex;
   margin: auto;
   justify-content: center;
-  max-width: 2rem;
 }
 
 form {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
 }
 
 input {
+  display: flex;
   margin-bottom: 1rem;
+  min-width: 100px;
+}
+
+p {
+  font-size: 40px;
+}
+
+h1 {
+  font-size: 80px;
 }
 
 .titleWrap {
