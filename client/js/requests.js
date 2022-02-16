@@ -1,6 +1,6 @@
 async function getItem(id) {
   try {
-    const resp = await fetch(`http://localhsot:3000/posts/${id}`);
+    const resp = await fetch(`http://localhost:3000/posts/${id}`);
     const data = await resp.json();
     return data;
   } catch (err) {

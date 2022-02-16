@@ -49,16 +49,18 @@ class Post {
     });
   }
 
-  static create(title, usernmae, body, resources) {
+  static create(title, username, body, resources) {
     return new Promise(async (resolve, reject) => {
       try {
         const db = await init();
-        let postData = await db
-          .collection("posts")
-          .insertOne({ title, usernmae, body, resources });
-        console.log(postData);
-        let newPost = new Post(postData.insertionId[0]); // MIGHT NOT WORK
-        console.log(newPost);
+        let postData = await db.collection("posts").insertOne({
+          title: title,
+          username: username,
+          body: body,
+          resources: resources
+        });
+        let newPostId = new Post(postData.insertedId);
+        let newPost = this.findById(newPostId);
         resolve(newPost);
       } catch (err) {
         reject("Error creating post");
