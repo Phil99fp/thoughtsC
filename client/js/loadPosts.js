@@ -1,5 +1,3 @@
-const body = document.querySelector(body);
-
 function loadPost(id) {
   const wrapper = document.createElement("div");
   const title = document.createElement("h2");
@@ -22,3 +20,6 @@ function loadPost(id) {
   wrapper.appendChild(image);
   wrapper.appendChild(link);
 }
+
+const submitButton = document.querySelector("#post");
+submitButton.addEventListener("submit", postPost);

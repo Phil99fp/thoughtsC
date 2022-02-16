@@ -12,21 +12,31 @@
       <div class="titleDiv">
         <h1>Thoughts in C</h1>
       </div>
+    </div>
 
-      <form>
-        <input class="title" type="text" placeholder="Title" />
-        <input class="name" type="text" placeholder="Name" />
+    <section>
+      <form id="post">
+        <input name="title" type="text" placeholder="Title" />
+        <input name="username" type="text" placeholder="Name" />
         <textarea
-          class="story"
+          name="body"
           rows="10"
           cols="100"
           placeholder="Story..."
         ></textarea>
+        <input
+          class="submit"
+          type="image"
+          src="./imgs/message.png"
+          alt="submit"
+          height="100"
+          width="100"
+          value="Post Message"
+        />
       </form>
+    </section>
 
-      <button type="button" id="post">
-        <img src="./imgs/message.png" height="100" width="100" />
-      </button>
-    </div>
+    <script src="js/requests.js"></script>
+    <script src="js/loadPosts.js"></script>
   </body>
 </html>

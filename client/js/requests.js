@@ -22,7 +22,7 @@ async function postPost(e) {
     if (err) {
       throw Error(err);
     } else {
-      window.location.hash = `#posts/${id}`;
+      // window.location.hash = `#posts/${id}`;
     }
   } catch (err) {
     console.warn(err);

@@ -2,18 +2,24 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  margin: 0;
-  padding: 0;
+  margin: 1rem;
+  padding: 1rem;
   background-color: white;
   font-family: "stickman", sans-serif;
+}
+
+section {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  max-width: 2rem;
 }
 
 form {
   display: grid;
 }
 
-.name {
-  margin-top: 1rem;
+input {
   margin-bottom: 1rem;
 }
 
@@ -23,6 +29,7 @@ form {
   justify-content: center;
   align-items: center;
 }
+
 .titleDiv {
   max-width: fit-content;
   font-size: clamp(1.5rem, 5vw, 2.75rem);
@@ -32,4 +39,10 @@ form {
   color: black;
   line-height: 2.5em;
   margin-bottom: 0.25em;
+}
+
+.submit {
+  margin: auto;
+  margin-top: 1rem;
+  background-color: white;
 }
