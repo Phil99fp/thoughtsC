@@ -6,7 +6,7 @@ app.use(cors());
 app.use(express.json());
 
 const postRoutes = require("./routes/posts");
-app.use("/post", postRoutes);
+app.use("/posts", postRoutes);
 
 // Root route
 app.get("/", (req, res) => res.send("Hello, client!"));

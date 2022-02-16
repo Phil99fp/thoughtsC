@@ -1,16 +1,16 @@
 version: "3"
 services:
-  client:
-    container_name: thoughts_client
-    image: node:12.18.4
-    port:
-      - 8080:8080
-    volumes:
-      - type: bind
-        source: ./client
-        target: /code
-    working_dir: /code
-    command: ["http-server"]
+  # client:
+  #   container_name: thoughts_client
+  #   image: node:12.18.4
+  #   ports:
+  #     - 8080:8080
+  #   volumes:
+  #     - type: bind
+  #       source: ./client
+  #       target: /code
+  #   working_dir: /code
+  #   command: ["http-server"]
 
   server:
     container_name: thoughts_server
@@ -32,8 +32,9 @@ services:
   db:
     container_name: thoughts_db
     image: mongo
-    volumes: -"dbdata:/var/lib/mongodb/data"
-      ="./db/seeds.js:/docker-entrypoint-initdb.d/seeds.js:ro"
+    volumes: 
+      - "dbdata:/var/lib/mongodb/data"
+      - "./db/seeds.js:/docker-entrypoint-initdb.d/seeds.js:ro"
     environment:
       - MONGO_INITDB_ROOT_USERNAME=thoughtsC
       - MONGO_INITDB_DATABASE=pages

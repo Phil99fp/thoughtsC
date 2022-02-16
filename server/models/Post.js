@@ -15,7 +15,17 @@ class Post {
       try {
         const db = await init();
         const postData = await db.collection("posts").find().toArray();
-        const posts = postData.map((p) => new Post({ ...p, id: p._id }));
+        const posts = postData.map(
+          (p) =>
+            new Post({
+              ...p,
+              id: p._id,
+              title: p.title,
+              username: p.username,
+              body: p.body,
+              resources: p.resources
+            })
+        );
         resolve(posts);
       } catch (err) {
         reject("Error retrieving post");

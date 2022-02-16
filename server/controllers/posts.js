@@ -26,3 +26,5 @@ async function create(req, res) {
     res.status(422).json({ error });
   }
 }
+
+module.exports = { index, show, create };
