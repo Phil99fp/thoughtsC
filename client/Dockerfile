@@ -1,3 +1,4 @@
-FROM node:12.18.4
+FROM node
 
 RUN npm i -g http-server
+
