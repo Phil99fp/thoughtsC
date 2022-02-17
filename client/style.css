@@ -1,0 +1,75 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 1rem;
+  padding: 1rem;
+  background-color: white;
+  font-family: "stickman", sans-serif;
+}
+
+section,
+div {
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  justify-content: center;
+  max-height: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+input {
+  display: flex;
+  margin-bottom: 1rem;
+  min-width: 100px;
+}
+
+button {
+  display: flex;
+  margin: auto;
+  margin-top: 1em;
+  padding: 1.5em;
+  min-width: 100px;
+  justify-content: center;
+  align-self: center;
+}
+
+label {
+  font-size: 24px;
+}
+p {
+  font-size: 40px;
+}
+
+h1 {
+  font-size: 80px;
+}
+
+.titleWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.titleDiv {
+  max-width: fit-content;
+  font-size: clamp(1.5rem, 5vw, 2.75rem);
+  text-align: center;
+  font-family: "stickman", sans-serif;
+  font-weight: bold;
+  color: black;
+  line-height: 2.5em;
+  margin-bottom: 0.25em;
+}
+
+.submit {
+  margin: auto;
+  margin-top: 1rem;
+  background-color: white;
+}
