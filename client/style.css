@@ -2,19 +2,52 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  margin: 0;
-  padding: 0;
+  margin: 1rem;
+  padding: 1rem;
   background-color: white;
   font-family: "stickman", sans-serif;
 }
 
-form {
-  display: grid;
+section,
+div {
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  justify-content: center;
+  max-height: 100%;
 }
 
-.name {
-  margin-top: 1rem;
+form {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+input {
+  display: flex;
   margin-bottom: 1rem;
+  min-width: 100px;
+}
+
+button {
+  display: flex;
+  margin: auto;
+  margin-top: 1em;
+  padding: 1.5em;
+  min-width: 100px;
+  justify-content: center;
+  align-self: center;
+}
+
+label {
+  font-size: 24px;
+}
+p {
+  font-size: 40px;
+}
+
+h1 {
+  font-size: 80px;
 }
 
 .titleWrap {
@@ -23,6 +56,7 @@ form {
   justify-content: center;
   align-items: center;
 }
+
 .titleDiv {
   max-width: fit-content;
   font-size: clamp(1.5rem, 5vw, 2.75rem);
@@ -32,4 +66,10 @@ form {
   color: black;
   line-height: 2.5em;
   margin-bottom: 0.25em;
+}
+
+.submit {
+  margin: auto;
+  margin-top: 1rem;
+  background-color: white;
 }

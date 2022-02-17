@@ -11,10 +11,18 @@ async function getItem(id) {
 async function postPost(e) {
   e.preventDefault();
   try {
+    const formDataObject = Object.fromEntries(new FormData(e.target));
+    if (formDataObject.hasOwnProperty("image")) {
+      formDataObject.resources = {};
+      formDataObject.resources.image = formDataObject.image;
+      delete formDataObject.image;
+    }
+    const formData = JSON.stringify(formDataObject);
+
     const options = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(Object.fromEntries(new FormData(e.target)))
+      body: formData
     };
 
     const resp = await fetch("http://localhost:3000/posts", options);
