@@ -1,0 +1,49 @@
+version: "3"
+services:
+
+  client:
+    container_name: thoughts_client
+    build: ./client
+    image: thoughts_client
+    ports:
+      - 8080:8080
+    volumes:
+      - type: bind
+        source: ./client
+        target: /code
+    working_dir: /code
+    command: [ "http-server" ]
+
+  server:
+    container_name: thoughts_server
+    image: node:12.18.4
+    working_dir: /code
+    ports:
+      - 3000:3000
+    environment:
+      - DB_NAME=pages
+      - DB_CONNECTION=mongodb://thoughtsC:pagepass@db:27017
+    depends_on:
+      - db
+    volumes:
+      - type: bind
+        source: ./server
+        target: /code
+    command: bash -c "npm install && npm start"
+
+  db:
+    container_name: thoughts_db
+    image: mongo
+    volumes: 
+      - "dbdata:/var/lib/mongodb/data"
+      - "./db/seeds.js:/docker-entrypoint-initdb.d/seeds.js:ro"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=thoughtsC
+      - MONGO_INITDB_DATABASE=pages
+      - MONGO_INITDB_ROOT_PASSWORD=pagepass
+
+volumes:
+  dbdata:
+networks:
+  default:
+    name: network
