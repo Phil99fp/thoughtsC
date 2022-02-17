@@ -10,20 +10,26 @@
   <body>
     <div class="titleWrap">
       <div class="titleDiv">
-        <h1>Thoughts in C</h1>
+        <h1 id="header">Thoughts in C</h1>
       </div>
     </div>
 
     <section>
       <form id="post">
-        <input name="title" type="text" placeholder="Title" />
-        <input name="username" type="text" placeholder="Name" />
+        <label for="title">Title:</label>
+        <input id="title" name="title" type="text" placeholder="Title" />
+        <label for="username">Pseudonym:</label>
+        <input id="username" name="username" type="text" placeholder="Name" />
+        <label for="body">Message:</label>
         <textarea
+          id="body"
           name="body"
           rows="10"
           cols="100"
           placeholder="Story..."
         ></textarea>
+        <label for="linkArea">Attach an image url:</label>
+        <textarea id="linkArea" name="image" rows="1" cols="33"></textarea>
         <input
           class="submit"
           type="image"

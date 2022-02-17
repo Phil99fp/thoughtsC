@@ -7,9 +7,17 @@ function loadPost(data) {
   const body = document.createElement("p");
   const image = document.createElement("img");
   const link = document.createElement("a");
+  const button = document.createElement("button");
+  button.type = "button";
+  button.innerText = "share";
+  button.addEventListener("click", () => {
+    //copy url to clipboard
+    navigator.clipboard.writeText(window.location.href);
+    alert("Link copied to clipboard");
+  });
 
   title.textContent = data.title;
-  username.textContent = data.username;
+  username.textContent = `by ${data.username}`;
   body.textContent = data.body;
   if (data.resources) {
     if (data.resources.image) {
@@ -24,6 +32,7 @@ function loadPost(data) {
   wrapper.appendChild(body);
   wrapper.appendChild(image);
   wrapper.appendChild(link);
+  wrapper.appendChild(button);
   return wrapper;
 }
 
@@ -45,4 +54,9 @@ if (window.location.hash) {
   console.log("nice");
   updateContent();
 }
+const header = document.querySelector("#header");
+header.addEventListener("click", () => {
+  window.location.hash = "";
+  location.reload();
+});
 submitButton.addEventListener("submit", postPost);

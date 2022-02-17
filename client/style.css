@@ -11,6 +11,7 @@ body {
 section {
   display: flex;
   margin: auto;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -26,6 +27,18 @@ input {
   min-width: 100px;
 }
 
+button {
+  display: flex;
+  margin: auto;
+  padding: 1.5em;
+  min-width: 100px;
+  justify-content: center;
+  align-self: center;
+}
+
+label {
+  font-size: 24px;
+}
 p {
   font-size: 40px;
 }
